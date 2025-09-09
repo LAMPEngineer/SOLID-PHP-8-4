@@ -1,3 +1,6 @@
+
+![SOLID_Design_in_PHP_8-4.png](img/SOLID_Design_in_PHP_8-4.png)
+
 # SOLID Principles in PHP 8.4
 1. Single Responsibility Principle (<a href="1_SRP/" >SRP</a>)<br/>
     <a href="1_SRP/bad_design.php">a. Bad Design</a>  (Violation of SRP)<br/>
@@ -19,4 +22,3 @@
     <a href="5_DIP/bad_design.php">a. Bad Design</a>  (Violation of DIP)<br/>
     <a href="5_DIP/good_design.php">b. Good Design</a>  (Following DIP)<br/>
 
-![SOLID_Design_in_PHP_8-4.png](img/SOLID_Design_in_PHP_8-4.png)
