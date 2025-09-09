@@ -18,3 +18,5 @@
 5. Dependency Inversion Principle (<a href="5_DIP/" >DIP</a>)<br/>
     <a href="5_DIP/bad_design.php">a. Bad Design</a>  (Violation of DIP)<br/>
     <a href="5_DIP/good_design.php">b. Good Design</a>  (Following DIP)<br/>
+
+![SOLID_Design_in_PHP_8-4.png](img/SOLID_Design_in_PHP_8-4.png)
