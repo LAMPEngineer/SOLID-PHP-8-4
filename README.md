@@ -2,6 +2,18 @@
 ![SOLID_Design_in_PHP_8-4.png](img/SOLID_Design_in_PHP_8-4.png)
 
 # SOLID Principles in PHP 8.4
+SOLID is an acronym of five object oriented design principles by Robert C. Martin. These principles are essential guidelines for making code maintainable, scalable, loose coupling, flexible and stable.
+
+## The acronym S.O.L.I.D. stands for:
+
+- Single Responsibility Principle (SRP)
+- Open-Closed Principle (OCP)
+- Liskov Substitution Principle (LSP)
+- Interface Segregation Principle (ISP)
+- Dependency Inversion Principle (DIP)
+
+## SOLID principles with code examples...
+
 1. Single Responsibility Principle (<a href="1_SRP/" >SRP</a>)<br/>
     <a href="1_SRP/bad_design.php">a. Bad Design</a>  (Violation of SRP)<br/>
     <a href="1_SRP/good_design.php">b. Good Design</a>  (Following SRP)<br/>
