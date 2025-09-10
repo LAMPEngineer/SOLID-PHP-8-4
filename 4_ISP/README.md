@@ -9,7 +9,7 @@ A better design would be to have a separate, small remote for your TV, a differe
 
 
 
-## Code Demo
+## Real World Code Demo
 Imagine you have a single, large interface called `Worker` with methods for all kind of tasks: `work`, `manageProject`, `writeCode`. 
 
 Now, let's say we have two types of workers: a `Developer` and `Manager`. 

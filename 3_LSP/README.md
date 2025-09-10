@@ -9,7 +9,7 @@ If we have a "Bird" class and create "Eagle" and "Penguin" subclasses, both shou
 A better design would be to have a more general "Bird" class without the fly() method, and create an interface like canFly() that "Eagle" can implement.
 
 
-## Code Demo
+## Real World Code Demo
 In the code demo I have created two designs to understand this principle:
 
 1. Bad Design (bad_design.php): In this example, a parent class "PaymentMethod" has a refund() method. It's one child class "CashOnDelivery" breaks this rule because we can't expect refund from CashOnDelivery.
