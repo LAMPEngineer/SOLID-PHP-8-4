@@ -77,3 +77,9 @@ $xmlformatter = new XmlFormatter();
 $reportgenerator->generateReport(formatter: $xmlformatter);
 
 
+/* Output::
+
+    Generating PDF report...
+    Generating CSV report...
+    Generating XML report...
+*/

@@ -22,12 +22,12 @@ class CreditPayment extends PaymentMethod
 {
     public function pay( float $amount) : string
     {
-        return "Paid Rs. " . $amount . " with Credit Card.";
+        return 'Paid $' . $amount . ' with Credit Card.';
     }
 
     public function refund(float $amount): string
     {
-        return "Refunded Rs. " . $amount . " to Credit Card.";
+        return 'Refunded $' . $amount . ' to Credit Card.';
     }
 }
 
@@ -35,35 +35,53 @@ class CashOnDelivery extends PaymentMethod
 {
     public function pay(float $amount): string
     {
-        return "Cash of Rs. " . $amount . " will be collected on delivery.";
+        return 'Cash of $' . $amount . ' will be collected on delivery.';
     }
 
     // Problem: Cash on Delivery can't refund
     public function refund(float $amount): string
     {
-        throw new MyCustomException('Refund not supported for Cash On Delivery.');
+        throw new \Exception('Refund not supported for Cash On Delivery.' . PHP_EOL);
     }
 }
 
 
-class MyCustomException extends Exception
+class PaymentProcess
 {
-    // You can add custom properties or methods here if needed
-    public function __construct($message = "", $code = 0)
+   public function processPay(PaymentMethod $payment, float $amount) : void
     {
-        parent::__construct($message, $code);
+        echo $payment->pay($amount) . PHP_EOL;
     }
-}
 
-function processRefund(PaymentMethod $payment, float $amount) : void
-{
-    echo $payment->refund($amount) . PHP_EOL;
+   public function processRefund(PaymentMethod $payment, float $amount) : void
+    {
+        echo $payment->refund($amount) . PHP_EOL;
+    }
 }
 
 // Usages
-$card = new CreditPayment();
-processRefund($card, 500); // Works
+try {
+    $card = new CreditPayment();
+    $paymentprocess = new PaymentProcess();
 
-$cod = new CashOnDelivery();
-processRefund($cod, 500); // Breaks: Unexpected exception.
+    $paymentprocess->processPay($card, 500.67); // Works
+    $paymentprocess->processRefund($card, 500.67); // Works
 
+
+    $cod = new CashOnDelivery();
+    $paymentprocess->processPay($cod, 500.67); // Works
+    $paymentprocess->processRefund($cod, 500); // Breaks: Unexpected exception.
+
+} catch (\Throwable $th) {
+
+    print $th->getMessage();
+}
+
+
+/* Output::
+
+    Paid $500.67 with Credit Card.
+    Refunded $500.67 to Credit Card.
+    Cash of $500.67 will be collected on delivery.
+    Refund not supported for Cash On Delivery.
+*/

@@ -28,12 +28,12 @@ class CreditPayment implements RefundablePaymentMethod
 {
     public function pay( float $amount) : string
     {
-        return "Paid Rs. " . $amount . " with Credit Card.";
+        return 'Paid $' . $amount . ' with Credit Card.';
     }
 
     public function refund(float $amount): string
     {
-        return "Refunded Rs. " . $amount . " to Credit Card.";
+        return 'Refunded $' . $amount . ' to Credit Card.';
     }
 }
 
@@ -41,28 +41,52 @@ class CashOnDelivery implements PaymentMethod
 {
     public function pay(float $amount) : string
     {
-        return "Cash of Rs. " . $amount . " will be collected on delivery.";
+        return 'Cash of $' . $amount . ' will be collected on delivery.';
     }
 
 }
 
 
-function processPayment(PaymentMethod $paymemt, float $amount)
+class PaymentProcess
 {
-    echo $paymemt->pay($amount) . PHP_EOL;
-}
+    
+    public function processPayment(PaymentMethod $paymemt, float $amount) : void
+    {
+        echo $paymemt->pay($amount) . PHP_EOL;
+    }
 
-function processRefund(RefundablePaymentMethod $payment, float $amount)
-{
-    echo $payment->refund($amount) . PHP_EOL;
+
+    public function processRefund(RefundablePaymentMethod $payment, float $amount) : void
+    {
+        echo $payment->refund($amount) . PHP_EOL;
+    }
+
 }
 
 // Usages
-$card = new CreditPayment();
-$cod  = new CashOnDelivery();
+try {
 
-processPayment($card, 500);
-processRefund($card, 500);
+    $card = new CreditPayment();
+    $cod  = new CashOnDelivery();
 
-processPayment($cod, 500);
-//processRefund($cod, 500); // not allowed, that's correct and follow LSP
+    $paymentprocess = new PaymentProcess();
+
+    $paymentprocess->processPayment($card, 500.76);
+    $paymentprocess->processRefund($card, 500.76);
+
+    $paymentprocess->processPayment($cod, 400.56);
+    //$paymentprocess->processRefund($cod, 400.56); // not allowed, that's correct and follow LSP
+
+} catch (\Throwable $th) {
+    
+    print $th->getMessage();
+}
+
+
+/* Output::
+
+    Paid $500.76 with Credit Card.
+    Refunded $500.76 to Credit Card.
+    Cash of $400.56 will be collected on delivery.
+*/
+

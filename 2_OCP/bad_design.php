@@ -44,3 +44,9 @@ try {
     print $e->getMessage() . PHP_EOL;
 }
 
+/* Output::
+
+    Generating PDF report...
+    Generating CSV report...
+    Unsupported format json
+*/
