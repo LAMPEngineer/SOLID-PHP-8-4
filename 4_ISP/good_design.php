@@ -33,7 +33,7 @@ class Developer implements Workable, Codeable
 
     public function writeCode()
     {
-        echo 'Developer is writhing code...' . PHP_EOL;
+        echo 'Developer is writing code...' . PHP_EOL;
     }
 }
 
@@ -80,7 +80,7 @@ try {
 /* Output::
 
     Developer is working...
-    Developer is writhing code...
+    Developer is writing code...
     Manager is working...
     Manager is managing projects...
 */

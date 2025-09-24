@@ -46,12 +46,12 @@ class Manager implements Worker
 {
     public function work() : void
     {
-        echo "Manager is working..." . PHP_EOL;
+        echo 'Manager is working...' . PHP_EOL;
     }
 
     public function manageProjects() : void
     {
-        echo "Manager is managing projects..." . PHP_EOL;
+        echo 'Manager is managing projects...' . PHP_EOL;
     }
 
     // Problem: Manager doesn't write code
