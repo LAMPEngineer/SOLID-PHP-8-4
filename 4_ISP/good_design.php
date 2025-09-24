@@ -11,7 +11,7 @@ interface Workable
 
 interface Manageable
 {
-    public function mangeProjects();
+    public function manageProjects();
 }
 
 interface Codeable
@@ -28,12 +28,12 @@ class Developer implements Workable, Codeable
 {
     public function work() : void
     {
-        echo "Developer is working..." . PHP_EOL;
+        echo 'Developer is working...' . PHP_EOL;
     }
 
     public function writeCode()
     {
-        echo "Developer is writhing code..." . PHP_EOL;
+        echo 'Developer is writhing code...' . PHP_EOL;
     }
 }
 
@@ -46,20 +46,41 @@ class Manager implements Workable, Manageable
 {
     public function work() : void
     {
-        echo "Manager is working..." . PHP_EOL;
+        echo 'Manager is working...' . PHP_EOL;
     }
 
-    public function mangeProjects()
+    public function manageProjects()
     {
-        echo "Manager is managing projects..." . PHP_EOL;
+        echo 'Manager is managing projects...' . PHP_EOL;
     }
 }
 
-// Usages
-$developer = new Developer();
-$developer->work();
-$developer->writeCode(); // works
+// Usages - Developer
+try {
 
-$manager = new Manager();
-$manager->work();
-$manager->mangeProjects(); // works
+    $developer = new Developer();
+    $developer->work();
+    $developer->writeCode();
+    
+} catch (\Throwable $th) {
+    print $th->getMessage();
+}
+
+// Usages - Manager
+try {
+
+    $manager = new Manager();
+    $manager->work();
+    $manager->manageProjects();
+
+} catch (\Throwable $th) {
+    print $th->getMessage();
+}
+
+/* Output::
+
+    Developer is working...
+    Developer is writhing code...
+    Manager is working...
+    Manager is managing projects...
+*/

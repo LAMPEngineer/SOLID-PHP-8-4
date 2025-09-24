@@ -20,18 +20,18 @@ class Developer implements Worker
 {
     public function work() : void
     {
-        echo "Developer is working..." . PHP_EOL;
-    }
-
-    // Problem: Developer doesn't manage projects
-    public function manageProjects() : Exception
-    {
-        throw new MyCustomException("Developer does't manage projects...");
+        echo 'Developer is working...' . PHP_EOL;
     }
 
     public function writeCode() : void
     {
         echo "Developer is writing code..." . PHP_EOL;
+    }
+
+    // Problem: Developer doesn't manage projects
+    public function manageProjects() : Exception
+    {
+        throw new \Exception('Developer does not manage projects...' . PHP_EOL);
     }
 
 }
@@ -57,30 +57,40 @@ class Manager implements Worker
     // Problem: Manager doesn't write code
     public function writeCode() : Exception
     {
-        throw new MyCustomException("Manager doesn't write code.");
+        throw new \Exception('Manager does not write code.' . PHP_EOL);
     }
 
 }
 
-class MyCustomException extends Exception
-{
-    // You can add custom properties or methods here if needed
-    public function __construct($message = "", $code = 0)
-    {
-        parent::__construct($message, $code);
-    }
+// Usages - Developer
+try {
+    $developer = new Developer();
+    $developer->work();
+    $developer->writeCode();
+    $developer->manageProjects(); // throw exception
+} catch (\Throwable $th) {
+
+    print $th->getMessage();
 }
 
+// Usages - Manager
+try {
+    $manager = new Manager();
+    $manager->work();
+    $manager->manageProjects();
+    $manager->writeCode(); // throw exception
+} catch (\Throwable $th){
 
-// Usages
-$developer = new Developer();
-$developer->work(); // works
-$developer->writeCode(); // works
-//$developer->manageProjects(); // don't work, throw exception
+   print $th->getMessage();
+}
 
+/* Output::
 
-$manager = new Manager();
-$manager->work(); // works
-$manager->manageProjects(); // works
-//$manager->writeCode(); // don't work, throw exception
+    Developer is working...
+    Developer is writing code...
+    Developer does not manage projects...
+    Manager is working...
+    Manager is managing projects...
+    Manager does not write code.
+*/
 
