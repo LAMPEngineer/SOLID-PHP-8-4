@@ -16,7 +16,7 @@ class EmailSender
 {
     public function send(string $message) : void
     {
-        echo "Sending email: " . $message . PHP_EOL;
+        echo 'Sending email: ' . $message . PHP_EOL;
     }
 }
 
@@ -25,7 +25,7 @@ class SMSSender
 {
     public function send(string $message) : void
     {
-        echo "Sending SMS: " . $message . PHP_EOL;
+        echo 'Sending SMS: ' . $message . PHP_EOL;
     }
 }
 
@@ -51,13 +51,28 @@ class NotificationServices
         } elseif($type === 'sms'){
             $this->smssender->send(message: $message);
 
+        }else{
+            throw new \Exception('Unsupported notification service ' . $type . PHP_EOL);
         }
     }
 }
 
 // Usages
-$notification = new NotificationServices();
-$notification->notify(type: 'email', message: 'Hello!'); // Sending email: Hello!
+try {
 
-$notification->notify(type: 'sms', message: 'Hello!'); // Sending SMS: Hello!
+    $notification = new NotificationServices();
+    $notification->notify(type: 'Email', message: 'Hello!');
+    $notification->notify(type: 'Sms', message: 'Hello!');
+    $notification->notify(type: 'Push', message: 'Hello!');
 
+} catch (\Throwable $th) {
+    print $th->getMessage();
+}
+
+
+/* Output::
+
+    Sending email: Hello!
+    Sending SMS: Hello!
+    Unsupported notification service push
+*/

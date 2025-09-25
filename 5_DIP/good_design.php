@@ -21,7 +21,7 @@ class EmailSender implements MessageSender
 {
     public function send(string $message): void
     {
-        echo "Sending email: " . $message . PHP_EOL;
+        echo 'Sending email: ' . $message . PHP_EOL;
     }
 }
 
@@ -31,7 +31,7 @@ class SMSSender implements MessageSender
 {
     public function send(string $message): void
     {
-        echo "Sending sms: " . $message . PHP_EOL;
+        echo 'Sending sms: ' . $message . PHP_EOL;
 
     }
 }
@@ -41,7 +41,7 @@ class PushSender implements MessageSender
 {
     public function send(string $message): void
     {
-        echo "Sending push: " . $message . PHP_EOL;
+        echo 'Sending push: ' . $message . PHP_EOL;
 
     }
 }
@@ -68,16 +68,26 @@ class NotificationService
 
 
 // Usages
-$emailsender = new EmailSender();
-$smssender = new SMSSender();
-$pushsender = new PushSender();
+try {
+    $emailsender = new EmailSender();
+    $smssender = new SMSSender();
+    $pushsender = new PushSender();
 
-$notifications = new NotificationService($emailsender, $smssender, $pushsender);
-$notifications->notify(message: 'Hello!');
+    $notifications = new NotificationService($emailsender, $smssender, $pushsender);
+    $notifications->notify(message: 'Hello!');
+    
+} catch (\Throwable $th) {
+
+    print $th->getMessage();
+}
+
+
+
 /*
-Output:
-Sending email: Hello!
-Sending sms: Hello!
-Sending push: Hello!
+Output::
+
+    Sending email: Hello!
+    Sending sms: Hello!
+    Sending push: Hello!
 */
 
