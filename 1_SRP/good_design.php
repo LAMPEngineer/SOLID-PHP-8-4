@@ -1,20 +1,21 @@
 <?php
-/* 
+/*
  *  To follow SRP, we seperate the responsibilities.
- *  Now, if the database logic needs to change, we only need to modify 
+ *  Now, if the database logic needs to change, we only need to modify
  *  the UserRepository class, leaving the User class untouched.
  */
 
 
-/* 
- * The User class is now only responsible for representing a user. 
- */
+
+// The User class is now only responsible for representing a user.
 class User
 {
 
-    // Constructor property promotion 
-    public function __construct(private string $name, private string $email)
-    {}
+    // Constructor property promotion
+    public function __construct(
+            private string $name,
+            private string $email
+        ){}
 
 
     public function getName() : string
@@ -29,23 +30,37 @@ class User
 
 }
 
-/* 
- * The UserRepository class is responsible to handle the persistence of user data. 
- */
+
+// The UserRepository class is responsible to handle the persistence of user data.
+
 class UserRepository
 {
+    // Inject User - method injection
     public function save(User $user) : void
     {
-        echo 'Saving user ' . $user->getName() . " data into db. \n";
-        // Imagine complex database logic comes here
+        // Imagine database logic comes here
+        echo 'Saving user ' . $user->getName() . ' data into db...' . PHP_EOL;
 
     }
 }
 
 
 // Usage
-$user = new User(name: 'John', email: 'john@example.com'); //Named arguments
+try {
 
-$userRepository = new UserRepository();
+    $user = new User(email: 'john@example.com', name: 'John'); //Named arguments
 
-$userRepository->save($user); // dependency injection
+    $userRepository = new UserRepository();
+
+    $userRepository->save($user); // dependency injection
+
+} catch (\Throwable $th) {
+
+    print $th->getMessage();
+}
+
+/* Output::
+
+    Saving user John data into db...
+
+*/
