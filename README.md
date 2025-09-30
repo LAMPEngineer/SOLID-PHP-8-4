@@ -4,7 +4,7 @@
 # SOLID Principles Using Modern PHP
 SOLID is an acronym of five object oriented design principles by Robert C. Martin. These principles are essential guidelines for making code maintainable, scalable, loose coupling, flexible and stable.
 
-## The acronym S.O.L.I.D. stands for:
+## The S.O.L.I.D. Acronym
 
 - Single Responsibility Principle (SRP)
 - Open-Closed Principle (OCP)
@@ -12,7 +12,7 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
 - Interface Segregation Principle (ISP)
 - Dependency Inversion Principle (DIP)
 
-## SOLID principles with code examples...
+## SOLID Principles & Real World Demo
 
 1. Single Responsibility Principle ([SRP](1_SRP/))
    
