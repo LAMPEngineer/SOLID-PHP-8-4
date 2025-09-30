@@ -10,6 +10,6 @@ This principle is generally achieved by using abstractions like `interfaces` or 
 ## Real World Code Demo
 In the code demo I have created two designs to understand this principle:
 
-1. Bad Design (bad_design.php): In this example a class is generating reports in multiple formats and the calss is not closed for modification. We need to modify this class each time when a new format is introduced.
+1. Bad Design ([bad_design.php](bad_design.php/)): In this example a class is generating reports in multiple formats and the calss is not closed for modification. We need to modify this class each time when a new format is introduced.
 
-2. Good Design (good_desgn.php): To fix issues in the `Bad Design` example, I used `interface` that defines a contract for all report generators. This makes our code open for extension. To add a new format, we just extend the functionality without modifying existing code.
+2. Good Design ([good_desgn.php](good_design.php/)): To fix issues in the `Bad Design` example, I used `interface` that defines a contract for all report generators. This makes our code open for extension. To add a new format, we just extend the functionality without modifying existing code.

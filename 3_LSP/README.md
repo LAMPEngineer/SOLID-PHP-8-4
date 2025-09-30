@@ -12,7 +12,7 @@ A better design would be to have a more general "Bird" class without the fly() m
 ## Real World Code Demo
 In the code demo I have created two designs to understand this principle:
 
-1. Bad Design (bad_design.php): In this example, a parent class "PaymentMethod" has a refund() method. It's one child class "CashOnDelivery" breaks this rule because we can't expect refund from CashOnDelivery.
+1. Bad Design ([bad_design.php](bad_design.php/)): In this example, a parent class "PaymentMethod" has a refund() method. It's one child class "CashOnDelivery" breaks this rule because we can't expect refund from CashOnDelivery.
 
-2. Good Design (good_desgn.php): To fix issues in the `Bad Design` example, I splitted responsibilities into the different abstractions -  "PaymentMethod" and "RefundablePaymentMethod". 
+2. Good Design ([good_desgn.php](good_design.php/)): To fix issues in the `Bad Design` example, I splitted responsibilities into the different abstractions -  "PaymentMethod" and "RefundablePaymentMethod". 
 Now our CashOnDelivery class does not breaks LSP.

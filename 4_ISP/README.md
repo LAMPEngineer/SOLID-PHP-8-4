@@ -3,14 +3,14 @@ This principle states that a client shouldn't be forced to depend on interfaces 
 
 
 ## In an easy way to understand
-Imagine a single "universal" remote for your entire house that controls your TV, lights, sound system, and even the microwave. You only want to control your lights, but the remote still has buttons for cooking and brewing coffee, which are irrelevant and confusing for your goal.
+Imagine a single "universal" remote for our entire house that controls our TV, lights, sound system, and even the microwave. We only want to control our lights, but the remote still has buttons for cooking and brewing coffee, which are irrelevant and confusing for our goal.
 
-A better design would be to have a separate, small remote for your TV, a different one for your lights, and another for your music system. Each remote has only the buttons you need for its specific device, making it much simpler and more efficient.
+A better design would be to have a separate, small remote for our TV, a different one for our lights, and another for our music system. Each remote has only the buttons we need for its specific device, making it much simpler and more efficient.
 
 
 
 ## Real World Code Demo
-Imagine you have a single, large interface called `Worker` with methods for all kind of tasks: `work`, `manageProject`, `writeCode`. 
+Imagine we have a single, large interface called `Worker` with methods for all kind of tasks: `work`, `manageProject`, `writeCode`. 
 
 Now, let's say we have two types of workers: a `Developer` and `Manager`. 
 
@@ -29,8 +29,8 @@ To solve this, we segregate the large interface into smaller, more speific ones.
 
 In the code demo I have created two designs to understand this principle:
 
-1. Bad Design (bad_design.php): In this example, there is a fat interfase `Worker` has a manageProject() which is not suitable for `Developer` and a writeCode() method that is not suitable for `Manager`.
+1. Bad Design ([bad_design.php](bad_design.php/)): In this example, there is a fat interfase `Worker` has a manageProject() which is not suitable for `Developer` and a writeCode() method that is not suitable for `Manager`.
 
-2. Good Design (good_desgn.php): To fix issues in the `Bad Design` example, I segregate the large interface into smaller, more specific ones. 
+2. Good Design ([good_desgn.php](good_design.php/)): To fix issues in the `Bad Design` example, I segregate the large interface into smaller, more specific ones. 
 
 Now our classes does not breaks ISP.
