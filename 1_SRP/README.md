@@ -7,6 +7,6 @@ We could think this principle like `Swiss Army knife` vs. a `dedicated toolset`.
 ## Real World Code Demo
 In the code demo I have created two designs to understand this principle:
 
-1. Bad Design (bad_design.php): In this example a class is doning multiple things - managing `User` as well as handle user persistence.
+1. Bad Design ([bad_design.php](bad_design.php/)): In this example a class is doning multiple things - managing `User` as well as handle user persistence.
 
-2. Good Design (good_desgn.php): To fix issues in the `Bad Design` example, I separate the responsibilities into multiple classes that make it easier to maintain and extend. 
+2. Good Design ([good_desgn.php](good_design.php/)): To fix issues in the `Bad Design` example, I separate the responsibilities into multiple classes that make it easier to maintain and extend. 
