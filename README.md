@@ -14,9 +14,9 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
 
 ## SOLID principles with code examples...
 
-1. Single Responsibility Principle (<a href="1_SRP/" >SRP</a>)<br/>
-    <a href="1_SRP/bad_design.php">a. Bad Design</a>  (Violation of SRP)<br/>
-    <a href="1_SRP/good_design.php">b. Good Design</a>  (Following SRP)<br/>
+1. Single Responsibility Principle ([SRP](1_SRP/))
+    [a. Bad Design](1_SRP/bad_design.php)  (Violation of SRP)
+    [b. Good Design](1_SRP/good_design.php)  (Following SRP)
 
 2. Open-Closed Principle (<a href="2_OCP/" >OCP</a>)<br/>
     <a href="2_OCP/bad_design.php">a. Bad Design</a>  (Violation of OCP)<br/>
@@ -45,4 +45,4 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
 - [X] Nullable Type 
 - [X] Match Expression
 - [x] Constructor Properties
-- [ ] 
+
