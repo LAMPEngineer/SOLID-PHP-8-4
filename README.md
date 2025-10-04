@@ -1,5 +1,5 @@
 
-![SOLID_Design_in_PHP_8-4.png](img/SOLID_Design_in_PHP_8-4.png)
+![solid_principles_in_modern_php.png](img/solid_principles_in_modern_php.png)
 
 # SOLID Principles Using Modern PHP
 SOLID is an acronym of five object oriented design principles by Robert C. Martin. These principles are essential guidelines for making code maintainable, scalable, loose coupling, flexible and stable.
