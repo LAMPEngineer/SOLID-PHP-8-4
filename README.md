@@ -50,4 +50,6 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
 - [X] Nullable Type 
 - [X] Match Expression
 - [x] Constructor Properties
-
+- [x] Loose Coupling
+- [X] High Cohesion
+- [x] Flexible & Stable
