@@ -42,14 +42,14 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
 # Modern Features
 
 - [x] Dependency Injection
-- [X] Method Injection
-- [x] Constructor Injection
-- [X] Constructor property promotion
-- [X] Named Parameters
-- [X] Type hinting
-- [X] Nullable Type 
-- [X] Match Expression
-- [x] Constructor Properties
 - [x] Loose Coupling
 - [X] High Cohesion
+- [X] Match Expression
+- [X] Method Injection
+- [X] Constructor Property Promotion
+- [X] Named Parameters
+- [X] Type Hinting
+- [x] Constructor Injection
+- [X] Nullable Type 
+- [x] Constructor Properties
 - [x] Flexible & Stable
