@@ -39,7 +39,7 @@ SOLID is an acronym of five object oriented design principles by Robert C. Marti
    - [a. Bad Design](5_DIP/bad_design.php) (Violation of DIP)
    - [b. Good Design](5_DIP/good_design.php)  (Following DIP)
 
-# Modern PHP Features
+# Modern Features
 
 - [x] Dependency Injection
 - [X] Method Injection
